@@ -1,0 +1,16 @@
+{%  extends "layout.html" %}
+{% block body %}
+<div>
+    <ul>
+        {# Iterate 'foods' and generate a link to each food #}
+        {% for food in foods %}
+            <li>
+                <a href="{{ url_for('show_food', index=loop.index0) }}">
+                    {{ food.name }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+
